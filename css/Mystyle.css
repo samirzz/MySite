@@ -1,0 +1,267 @@
+* {
+  margin: 0px;
+  font-size: 15px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-image: url(../img/coverpage.jpg);
+  background-size: cover;
+  background-position: center;
+}
+/* creating basic layout for different section */
+.container {
+  min-height: 100%;
+  overflow: auto;
+  padding-bottom: 100px;
+}
+header {
+  position: absolute;
+  top: 0;
+}
+
+/* placing footer at the bottom of the page*/
+footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 5em;
+  /* background-color: #cc00ff; */
+  color: white;
+  text-align: center;
+}
+/*navbar contianer*/
+.top-navbar {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  background-color: #cc00ff;
+}
+
+/* Removing and maintaining anchor tags*/
+.top-navbar a {
+  display: block;
+  float: left;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+}
+
+/* Hover on the nav items */
+.top-navbar a:hover {
+  background-color: #8f00b3;
+  color: white;
+}
+
+/* places the search div at right*/
+.top-navbar .search-container {
+  float: right;
+}
+
+/* Search box management*/
+.top-navbar .search-container input[type="text"] {
+  padding: 6px;
+  border: none;
+  margin-top: 5px;
+  font-size: 17px;
+}
+
+/* managing the button */
+.top-navbar .search-container button {
+  float: right;
+  cursor: pointer;
+  color: black;
+  background: #2d383a;
+  border: none;
+  margin: 5px 16px 0px 0px;
+  font-size: 17px;
+  padding: 6px 10px;
+}
+
+/* hover on the search button */
+.top-navbar .search-container button:hover {
+  background-color: #2196f3;
+  color: white;
+}
+
+/* hide the form  and its styles*/
+.form-wrapper {
+  height: 300px;
+  width: 500px;
+  background-color: white;
+  color: red;
+}
+
+/* pop up login form contents */
+.form-contents {
+  padding: 20px;
+}
+/* styling the input fields */
+.form-wrapper .form-contents input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem auto;
+}
+/*Styles for submit buttons*/
+.form-contents input[type="button"] {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 10px;
+  border: none;
+  background-color: rgb(58, 212, 58);
+  cursor: pointer;
+}
+#close {
+  background-color: tomato;
+}
+/* hover effects for the pop login buttons*/
+input[type="button"]:hover {
+  background-color: rgb(6, 245, 6);
+}
+#close:hover {
+  background-color: rgb(247, 43, 7);
+}
+
+/* Keeping the login-form-content at center*/
+#form-modal-content {
+  margin: 10% auto;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-duration: 2s;
+}
+/* this is button for modal message both pop up login and spam add */
+.msgButton {
+  background-color: coral;
+  border: 0;
+  padding: 5px;
+  padding: 1em 2em;
+  display: inline-block;
+  cursor: pointer;
+
+  margin: 4em auto;
+}
+/* this is for hover effect of msgButton */
+.msgButton:hover {
+  background-color: rgba(214, 99, 57, 0.836);
+  color: white;
+  border-radius: 20px;
+}
+/* displays black backgrund when mnodal msg pops */
+.simpleModal,
+.login-form {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 100;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* oreintation and style of contents of modal */
+.modalContent {
+  margin: 10% auto;
+  padding: 30px;
+  width: 70%;
+  background-color: rgb(74, 199, 199);
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-duration: 2s;
+}
+/* manage close button */
+.closeBtn {
+  color: black;
+  font-size: 30px;
+  float: right;
+}
+/* hover on close button for other things */
+.closeBtn:focus,
+.closeBtn:hover {
+  color: green;
+  cursor: pointer;
+}
+
+/* message */
+p {
+  font-size: 30px;
+  text-align: center;
+}
+
+/* spam image management*/
+#spam-img {
+  margin: 1em 25em;
+  height: 150px;
+  width: 200px;
+  border: solid 3px red;
+}
+
+/* Add animation for the modal element
+*  to change its style from none to
+*  block type */
+@keyframes openmodal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* for the social media icons */
+.social-media-links {
+  padding: 2rem;
+  max-width: 9rem;
+  display: block;
+  float: right;
+  background-color: #2d383a;
+  margin: 5rem 1rem;
+  border-radius: 20px;
+}
+.fa-facebook,
+.fa-envelope,
+.fa-linkedin {
+  font-size: 3rem !important;
+  color: white;
+  text-align: center;
+  margin: 1rem auto;
+  background-color: grey;
+  border-radius: 50px;
+  height: 5rem;
+  width: 5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+/* hover effects for the social media button */
+.social:hover {
+  background-color: rgb(80, 78, 78);
+  color: black;
+}
+.footer_button {
+  margin: 1em 37em;
+}
+/* this is for footer message copyright message*/
+.footer-message {
+  font-size: 20px;
+  color: black;
+  margin: 0.8em;
+}
+
+/* this is for the youtube video*/
+iframe {
+  display: block;
+  margin: 1.5rem auto;
+  border: none;
+  height: 20rem;
+  width: 40rem;
+  border-radius: 2rem;
+}
+.mid-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
