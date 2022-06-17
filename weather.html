@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Website</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <link rel="stylesheet" type="text/css" href="css/Mystyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      h1,
+      h2,
+      h3,
+      span {
+        margin: 0px;
+      }
+
+      h1 {
+        font-size: 7rem;
+      }
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+      }
+
+      span {
+        font-size: 6rem;
+        font-weight: 600;
+        align-items: center;
+      }
+
+      .weather-container {
+        max-width: 550px;
+        height: 60vh;
+        border: 2px solid black;
+        margin: 3rem auto;
+        text-align: center;
+        padding: 20px 5px;
+        background-color: white;
+        background-image:url("img/weather.webp") ;
+      }
+
+      .degrees {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- this is nav bar -->
+    <header>
+      <div class="top-navbar">
+        <a href="index.html">HOME</a>
+        <a href="weather.html">TODAY'S WEATHER</a>
+        <a href="">CONCLUSION</a>
+        <a href="">STUDENT DATA</a>
+        <a href="videoGallery.html">VIDEOS</a>
+
+        <div class="search-container">
+          <form action="">
+            <input
+              type="text"
+              name="search"
+              placeholder="Search...."
+              autocomplete="off"
+            />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="weather-container">
+        <h2 id="city">Kathmandu</h2>
+        <div class="mid-content">
+          <!-- <img src="img/weather_0.jpg" alt="icon" /> -->
+          <div class="degrees">
+            <h1 id="temp">20</h1>
+            <span> &deg;</span>
+          </div>
+          <h3 id="description">Sunny</h3>
+        </div>
+      </div>
+    </main>
+    <!--Pop up login form layout -->
+    <div class="login-form" id="login-form">
+      <form
+        action=""
+        class="form-wrapper"
+        id="form-modal-content"
+        autocomplete="off"
+      >
+        <div class="form-contents">
+          <input type="text" placeholder="Name" clear id="fname" />
+          <input type="email" placeholder="Email" id="email" />
+          <input type="button" value="Submit" id="submit" />
+          <input type="button" value="Close" id="close" />
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <!--Clickable form that brings up the pop up-->
+      <!-- <button class="msgButton">Click to open Login form</button> -->
+      <!--This is footer message-->
+      <p class="footer-message">
+        &copy; Samir Bhandari &nbsp; &nbsp; &trade; okgoogle &nbsp; &nbsp; &reg;
+        Bhandari corporation
+      </p>
+    </footer>
+    <script src="js/node.js">
+      // for the login form
+      // Get  the modal element
+      var loginForm = document.getElementById('login-form');
+      // Get the modal button
+      var formOpenBtn = document.getElementsByClassName('msgButton')[1];
+      // Get the close button of the login form
+      var closeF = document.getElementById('close');
+      // Get the submit button of the login form
+      var submitForm = document.getElementById('submit');
+
+      // listen for open click
+      formOpenBtn.addEventListener("click",openLogin);
+      // listen for close button click
+      	closeF.addEventListener("click", closeForm);
+      // listen for outside click from line
+      	window.addEventListener('click', clickOutsideForm);
+      // Listen for the click on the submit button of the login form
+      	submitForm.addEventListener('click', submitMsg);
+
+
+      // function to open login form when clicked
+      	function openLogin(){
+      		loginForm.style.display = "block";
+      	}
+
+      // function to close the form
+      	function closeForm(){
+      		loginForm.style.display = "none";
+      		// resets the entry entered in login
+      		document.getElementById("form-modal-content").reset();
+      	}
+
+      // function to close the form on outside click
+      	function clickOutsideForm(e){
+      		if(e.target == loginForm)
+      		{
+      			loginForm.style.display = "none";
+      		}
+      	}
+      // function that gives message when submit is pressed
+      function submitMsg(){
+      	// Get the input types of the login form
+      	var name = document.getElementById('fname').value;
+      	var email = document.getElementById('email').value;
+      	if(name == '' || email == ''){
+      		alert("empty");
+      	}
+      	else{
+      		alert("You will be logged in soon!");
+      	}
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Website</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <link rel="stylesheet" type="text/css" href="css/Mystyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- this is nav bar -->
+    <header>
+      <div class="top-navbar">
+        <a href="index.html">HOME</a>
+        <a href="weather.html">TODAY'S WEATHER</a>
+        <a href="">CONCLUSION</a>
+        <a href="">STUDENT DATA</a>
+        <a href="videoGallery.html">VIDEOS</a>
+
+        <div class="search-container">
+          <form action="">
+            <input
+              type="text"
+              name="search"
+              placeholder="Search...."
+              autocomplete="off"
+            />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- this is for javascript pop up message with photo -->
+      <button class="msgButton" id="msgButton">click me!</button>
+
+      <!--this is the modal skeleton that gets displayed or hidden on the user's request -->
+      <div class="simpleModal" id="simpleModal">
+        <div class="modalContent">
+          <span class="closeBtn">&times;</span>
+          <p>Hello Want to sell and buy some products online ???</p>
+          <img
+            src="img/modal-popup.jpg"
+            alt="This is hanuman"
+            srcset=""
+            id="spam-img"
+          />
+        </div>
+      </div>
+
+      <!--this is the section that shows the actual pop up login form-->
+      <div class="login-form" id="login-form">
+        <form
+          action=""
+          class="form-wrapper"
+          id="form-modal-content"
+          autocomplete="off"
+        >
+          <div class="form-contents">
+            <input type="text" placeholder="Name" clear id="fname" />
+            <input type="email" placeholder="Email" id="email" />
+            <input type="button" value="Submit" id="submit" />
+            <input type="button" value="Close" id="close" />
+          </div>
+        </form>
+      </div>
+      <!-- Social media links -->
+      <div class="social-media-links">
+        <i class="fa fa-facebook social fa-2x"></i>
+        <i class="fa fa-envelope social fa-2x"></i>
+        <i class="fa fa-linkedin social"></i>
+      </div>
+      <iframe
+        src="https://www.youtube.com/embed/tgbNymZ7vqY"
+        id="Boheman-video"
+        ></iframe>
+        <!--Clickable form that brings up the pop up-->
+        <button class="msgButton footer_button">Click to open Login form</button>
+    </main>
+
+    <footer>
+      <!--This is footer message-->
+      <p class="footer-message">
+        &copy; Samir Bhandari &nbsp; &nbsp; okgoogle &trade; &nbsp; &nbsp; &reg;
+        Bhandari corporation
+      </p>
+    </footer>
+    <script src="js/node.js"></script>
+  </body>
+</html>
